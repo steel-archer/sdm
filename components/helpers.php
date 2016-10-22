@@ -41,33 +41,3 @@ function uuid()
         mt_rand(0, 0xffff)
     );
 }
-
-/**
- * Converts string into a binary format.
- * @param  string $string
- * @return string
- */
-function strToBin($string)
-{
-    return pack('h*', $string);
-}
-
-/**
- * This function is like "strToBin", but just adds "0x" to the string and mysql will do the rest.
- * @param  string $string
- * @return string
- */
-function strToMysqlBin($string)
-{
-    return "0x{$string}";
-}
-
-/**
- * Converts string from a binary format.
- * @param  string $binaryString
- * @return string
- */
-function binToStr($binaryString)
-{
-    return current(unpack('h*', $packed));
-}
