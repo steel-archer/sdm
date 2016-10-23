@@ -37,4 +37,13 @@ class TimeLimitMessage extends ActiveRecord
             ['destroyAt', 'date', 'format' => 'php:Y-m-d H:i:s'],
         ];
     }
+
+    /**
+     * Returns if the message has been expired.
+     * @return boolean
+     */
+    public function isExpired()
+    {
+        return time() > strtotime($this->destroyAt);
+    }
 }

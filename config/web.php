@@ -1,6 +1,7 @@
 <?php
 
 $params = require(__DIR__ . '/params.php');
+$components = require_once(__DIR__ . '/components.php');
 
 $config = [
     'id' => 'basic',
@@ -38,15 +39,10 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
         ],
-        */
-    ],
+    ] + $components,
     'params' => $params,
 ];
 

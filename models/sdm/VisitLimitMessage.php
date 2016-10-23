@@ -39,6 +39,15 @@ class VisitLimitMessage extends ActiveRecord
     }
 
     /**
+     * Returns if this view of the message is last.
+     * @return boolean
+     */
+    public function isLastView()
+    {
+        return $this->visitsLeft === 1;
+    }
+
+    /**
      * Decrements count of visits before destroying message.
      * @return VisitLimitMessage Changed onject.
      */

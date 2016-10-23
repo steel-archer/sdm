@@ -2,6 +2,7 @@
 
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
+$components = require_once(__DIR__ . '/components.php');
 
 $config = [
     'id' => 'basic-console',
@@ -21,7 +22,7 @@ $config = [
             ],
         ],
         'db' => $db,
-    ],
+    ] + $components,
     'params' => $params,
     /*
     'controllerMap' => [
