@@ -34,7 +34,7 @@ class VisitLimitMessage extends ActiveRecord
         return [
             [['messageId', 'visitsLeft'], 'required'],
             [['messageId'],  'match', 'pattern' => '/^[0-9a-f]{32}$/'],
-            ['visitsLeft', 'integer'],
+            ['visitsLeft', 'integer', 'min' => 1],
         ];
     }
 
