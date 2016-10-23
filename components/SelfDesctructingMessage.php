@@ -3,9 +3,9 @@
 namespace app\components;
 
 use yii\base\Object;
-use app\models\sdm\Message;
-use app\models\sdm\TimeLimitMessage;
-use app\models\sdm\VisitLimitMessage;
+use app\models\backend\sdm\Message;
+use app\models\backend\sdm\TimeLimitMessage;
+use app\models\backend\sdm\VisitLimitMessage;
 
 /**
  * Class for work with self-desctructing messages.
