@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "74303072d1cc9a1da0dbf84d7a5348a2",
-    "content-hash": "5438861ad666f7367e7d9ae0e539b7d0",
+    "hash": "89256a11fa9d6c05e7ac613ef5aafe09",
+    "content-hash": "aba39f69ee751fef4ca6408ccf1ab420",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -298,6 +298,114 @@
                 "html"
             ],
             "time": "2016-07-16 12:58:58"
+        },
+        {
+            "name": "npm-asset/aes-js",
+            "version": "2.1.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/aes-js/-/aes-js-2.1.0.tgz",
+                "reference": null,
+                "shasum": "2bf04b06a05fff29d38e9048ff30dc59f1f0cd74"
+            },
+            "require-dev": {
+                "npm-asset/nodeunit": "0.9.1"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "http://github.com/ricmoo/aes-js/issues",
+                    "email": "github@ricmoo.com"
+                },
+                "npm-asset-main": "index.js",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git://github.com/ricmoo/aes-js.git"
+                },
+                "npm-asset-scripts": {
+                    "test": "nodeunit test/index.js"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Richard Moore",
+                    "email": "me@ricmoo.com"
+                }
+            ],
+            "description": "A pure JavaScript implementation of the AES block cipher and all common modes of operation.",
+            "homepage": "https://github.com/ricmoo/aes-js#readme",
+            "keywords": [
+                "aes",
+                "aes-cbc",
+                "aes-cfb",
+                "aes-ctr",
+                "aes-ecb",
+                "aes-ofb",
+                "block",
+                "cipher",
+                "decrypt",
+                "encrypt"
+            ]
+        },
+        {
+            "name": "npm-asset/js-md5",
+            "version": "0.4.1",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/js-md5/-/js-md5-0.4.1.tgz",
+                "reference": null,
+                "shasum": "11519a54167ea3ef9baffb6fbcd5e65bc7da94be"
+            },
+            "require-dev": {
+                "npm-asset/expect.js": "~0.3.1",
+                "npm-asset/jscoverage": "~0.5.9",
+                "npm-asset/jsdoc": ">=3.4.0,<4.0.0",
+                "npm-asset/mocha": "~2.3.4",
+                "npm-asset/requirejs": ">=2.1.22,<3.0.0",
+                "npm-asset/uglifyjs": "~2.4.10"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/emn178/js-md5/issues"
+                },
+                "npm-asset-main": "src/md5.js",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git+https://github.com/emn178/js-md5.git"
+                },
+                "npm-asset-scripts": {
+                    "test": "mocha tests/node-test.js -r jscoverage",
+                    "report": "mocha tests/node-test.js -r jscoverage --covout=html",
+                    "coveralls": "mocha tests/node-test.js -R mocha-lcov-reporter -r jscoverage | coveralls",
+                    "doc": "rm -rf doc;jsdoc src README.md -d doc",
+                    "compress": "uglifyjs src/md5.js --compress --mangle --comments --output build/md5.min.js",
+                    "build": "npm run-script compress;npm run-script doc"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chen, Yi-Cyuan",
+                    "email": "emn178@gmail.com"
+                }
+            ],
+            "description": "A simple MD5 hash function for JavaScript supports UTF-8 encoding.",
+            "homepage": "https://github.com/emn178/js-md5",
+            "keywords": [
+                "HMAC",
+                "cryptography",
+                "encryption",
+                "hash",
+                "md5"
+            ]
         },
         {
             "name": "swiftmailer/swiftmailer",
