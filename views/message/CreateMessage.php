@@ -6,6 +6,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Create self-destructing message';
 
 $script = <<< JS
+$(document).ready(function() {
     $('input[type=radio][name="CreateMessageForm[destroyTrigger]"]').change(function() {
         if (this.value == 'visit') {
             $("#visit").show();
@@ -16,6 +17,26 @@ $script = <<< JS
             $("#time").show();
         }
     });
+
+    $('#message-form').on('beforeSubmit', function (e) {
+        $('#message-form').data('yiiActiveForm').submitting = true;
+        $('#message-form').yiiActiveForm('validate');
+
+        if ($('#message-form').find('.has-error').length) {
+            // If we have not passed the validation, do nothing.
+            return false;
+        } else {
+            // Otherwise encrypt message via password.
+            var text      = $("#createmessageform-messagetext").val();
+            var password  = $("#createmessageform-password").val();
+            var encrypted = aesEncrypt(text, password, window.init);
+
+            $("#createmessageform-messagetext").val(JSON.stringify(encrypted));
+
+            return true;
+        }
+    });
+});
 JS;
 $this->registerJs($script);
 ?>
@@ -52,7 +73,13 @@ $this->registerJs($script);
 
         <div class="form-group">
             <div class="col-lg-offset-1 col-lg-11">
-                <?= Html::submitButton('Create message', ['class' => 'btn btn-primary', 'name' => 'message-button']) ?>
+                <?= Html::submitButton(
+                    'Create message',
+                    [   'class' => 'btn btn-primary',
+                        'id'    => 'message-button',
+                        'name'  => 'message-button',
+                    ]
+                )?>
             </div>
         </div>
 

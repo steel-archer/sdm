@@ -86,7 +86,6 @@ class MessageController extends Controller
 
                 if (isset($message['message'])) {
                     $messageText = $message['message'];
-                    $model->password = '';
                 } elseif (isset($message['error'])) {
                     $model->addError('messageId', $message['error']);
                 } else {

@@ -5,6 +5,21 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'View self-destructing message';
 
+$script = <<< JS
+$(document).ready(function() {
+    var messageText = $("#messageText").text().trim();
+
+    if (typeof(messageText) != "undefined" && messageText != '') {
+        var arr       = JSON.parse(messageText);
+        var password  = $("#viewmessageform-password").val();
+        var decrypted = aesDecrypt(arr, password, window.init);
+
+        $("#messageText").text(decrypted);
+    }
+});
+JS;
+$this->registerJs($script);
+
 ?>
 
 <div class="site-message">
@@ -36,7 +51,7 @@ $this->title = 'View self-destructing message';
     <?php if (isset($messageText)) : ?>
         <div>
             Message with id "<?= $model->messageId ?>" is:<br>
-            <i><?= $messageText ?></i>
-    </div>
+            <i id="messageText"><?= $messageText ?></i>
+        </div>
     <?php endif; ?>
 </div>

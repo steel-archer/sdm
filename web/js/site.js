@@ -1,3 +1,5 @@
+window.init = "c85c15326a534a32";
+
 function aesEncrypt(text, password, init) {
     var key = aesjs.util.convertStringToBytes(md5(password));
     var iv  = aesjs.util.convertStringToBytes(init);
