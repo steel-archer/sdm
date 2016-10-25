@@ -18,14 +18,8 @@ $(document).ready(function() {
         }
     });
 
-    $('#message-form').on('beforeSubmit', function (e) {
-        $('#message-form').data('yiiActiveForm').submitting = true;
-        $('#message-form').yiiActiveForm('validate');
-
-        if ($('#message-form').find('.has-error').length) {
-            // If we have not passed the validation, do nothing.
-            return false;
-        } else {
+    $('#message-form').on('beforeValidate', function (e) {
+        if (!$('#message-form').find('.has-error').length) {
             // Otherwise encrypt message via password.
             var text      = $("#createmessageform-messagetext").val();
             var password  = $("#createmessageform-password").val();
