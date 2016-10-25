@@ -41,3 +41,13 @@ function uuid()
         mt_rand(0, 0xffff)
     );
 }
+
+/**
+ * Function for encrypting passwords.
+ * @param  string $string Our password.
+ * @return string         Password hash with 60 chars length.
+ */
+function passwordHash($string)
+{
+    return password_hash($string, PASSWORD_BCRYPT, ['salt' => 'ac2c4a765adf49fcb1fe2b1273ac4366']);
+}

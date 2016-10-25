@@ -33,7 +33,8 @@ class Message extends ActiveRecord
     {
         return [
             [['messageId', 'messageText', 'passwordHash', 'destroyTrigger'], 'required'],
-            [['messageId', 'passwordHash'],  'match', 'pattern' => '/^[0-9a-f]{32}$/'],
+            [['messageId'],  'match', 'pattern' => '/^[0-9a-f]{32}$/'],
+            ['passwordHash', 'string', 'length' => 60],
             ['messageText', 'string', 'max' => 65535],
             ['destroyTrigger', 'in', 'range' => ['time', 'visit']],
         ];

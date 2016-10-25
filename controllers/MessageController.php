@@ -38,7 +38,7 @@ class MessageController extends Controller
                 }
                 $result = \Yii::$app->sdm->createMessage(
                     $model->messageText,
-                    md5($model->password),
+                    passwordHash($model->password),
                     $model->destroyTrigger,
                     $destroyAfter
                 );
@@ -80,7 +80,7 @@ class MessageController extends Controller
             if ($model->validate()) {
                 $message = \Yii::$app->sdm->viewMessage(
                     $model->messageId,
-                    md5($model->password)
+                    passwordHash($model->password)
                 );
 
                 if (isset($message['message'])) {
