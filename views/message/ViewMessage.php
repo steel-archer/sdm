@@ -51,7 +51,7 @@ $this->registerJs($script);
     <?php if (isset($messageText)) : ?>
         <div>
             Message with id "<?= $model->messageId ?>" is:<br>
-            <i id="messageText"><?= $messageText ?></i>
+            <b id="messageText"><?= $messageText ?></b>
         </div>
     <?php endif; ?>
 </div>

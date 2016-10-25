@@ -49,7 +49,6 @@ class MessageController extends Controller
                         [
                             'messageId' => $result['id'],
                             'viewUrl'   => Url::toRoute("/message/view?messageId={$result['id']}"),
-                            'newUrl'    => Url::toRoute('/message/create'),
                         ]
                     );
                 }
