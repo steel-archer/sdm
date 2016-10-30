@@ -1,0 +1,2 @@
+<?php
+    const C_PASSWORD_HASH_SALT = '';

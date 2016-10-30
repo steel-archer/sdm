@@ -29,6 +29,12 @@ composer install
 ```
 php yii migrate
 ```
+* Create file config/constants.php from template file config/constants.php.template.
+* Run in console:
+```
+php yii utils/uuid
+```
+* Paste received uuid value into file config/constants.php as value of constants C_PASSWORD_HASH_SALT and save file config/constants.php.
 
 Use it!
 ---------------

@@ -49,5 +49,5 @@ function uuid()
  */
 function passwordHash($string)
 {
-    return password_hash($string, PASSWORD_BCRYPT, ['salt' => 'ac2c4a765adf49fcb1fe2b1273ac4366']);
+    return password_hash($string, PASSWORD_BCRYPT, ['salt' => C_PASSWORD_HASH_SALT]);
 }

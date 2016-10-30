@@ -1,5 +1,6 @@
 <?php
 
+require_once(__DIR__ . '/constants.php');
 $params = require(__DIR__ . '/params.php');
 $components = require_once(__DIR__ . '/components.php');
 
